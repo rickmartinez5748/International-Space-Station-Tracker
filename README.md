@@ -1,7 +1,6 @@
 # International Space Station Tracker
 
-A Flask web app that shows the live location of the ISS and information about the area below it.
-
+In this Flask-based project, I developed a web app that tracks the live position of the International Space Station (ISS) and identifies the country and weather conditions below it. I integrated data from multiple APIs, including those for ISS coordinates, weather data, and country flags. The app also calculates the ISS's distance from my current location. This project demonstrates my ability to merge data from various sources and present it clearly to users.
 ## Features
 - Retrieves current ISS coordinates (Open Notify)
 - Shows weather at that location (OpenWeather)
