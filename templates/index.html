@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISS Information</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/core.css">
+</head>
+<body>
+    <!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="RPsbs-1445">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="/static/img/image-01.jpg">
+            <source media="(min-width: 601px)" srcset="/static/img/image-01.jpg">
+            <img loading="lazy" decoding="async" src="/static/img/image-01.jpg" alt="volunteers" width="650" height="600" aria-hidden="true">
+        </picture>
+        <div class="cs-content">
+            
+            <h2 class="cs-title">The International Space Station (ISS)</h2>
+            <p class="cs-text">
+                The International Space Station is a science laboratory that orbits Earth, built through global collaboration between space agencies like NASA, ESA, and others. It travels around the planet <b><u>every 90 minutes</u></b>, allowing astronauts to perform experiments in microgravity that benefit life on Earth and prepare for future missions to the Moon and Mars. Below you can find some interesting facts about the ISS:
+            <ul class="cs-card-group">
+                <li class="cs-li">
+                    <picture class="cs-li-picture">
+                        <img class="cs-li-icon" aria-hidden="true" src="/static/img/location.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Current Coordinates of the ISS</h3>
+                        <p class="cs-li-text">
+                       
+                                <b>Latitude: </b> {{ latitude }}<br>
+                                <b>Longitude: </b>{{ longitude }}<br>
+                                <em>({{latitude}},{{longitude}})</em>
+                         
+                        </p>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-li-picture">
+                        <img class="cs-li-icon" aria-hidden="true" src="/static/img/weather.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Current Weather Under the ISS</h3>
+                        <p class="cs-li-text">
+                            <b>Temperature: </b> {{ temp_c }} °C<br>
+                            <b>Description: </b>{{ description }}
+                        </p>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-li-picture">
+                        <img class="cs-li-icon" aria-hidden="true" src="/static/img/home.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Current Distance From My Home to the ISS</h3>
+                        
+                        <p class="cs-li-text">
+                            <b>Distance: </b>{{ my_distance }} km
+                        </p>
+                        <p class="cs-li-text"><em>(My Home Adsress: 200 Kent Court, Sudbury, ON.)</em></p>
+                    </div>
+                </li>
+            </ul>        
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--             Side By Side Reverse             -->
+<!-- ============================================ -->
+
+<section id="RPsbsr-1445">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="../static/img/world.jpg">
+            <source media="(min-width: 601px)" srcset="../static/img/world.jpg">
+            <img loading="lazy" decoding="async" src="../static/img/world.jpg" alt="volunteers" width="650" height="600" aria-hidden="true">
+        </picture>
+        <div class="cs-content">
+            <h2 class="cs-title">Country under the International Space Station</h2>
+            <p class="cs-text">
+                Based on the current coordinates of the International Space Station, it can be determined which country is 
+                right under, and retrieve some information about that country. However, most of the time the ISS is above water, in which case that is the information that you will receive.
+            </p>
+            <p class="cs-text">
+                    <b>Country: </b>{{ country_name }}<br>
+                    <b>Country Code: </b>{{ country_code }}<br>
+                    <b>Capital: </b>{{ capital }}<br>
+                    <b>Population: </b>{{ population }}<br>
+                    <b>Region: </b>{{ region }}<br>
+                    <b>Flag:</b><br>
+                    <!--Flask templates allow to use code to use data from JINJA in different ways-->
+
+                    {% if flag == "No flag to Show" %}
+                        {{ flag }}
+                    {% else %}
+                        <img src="{{ flag }}">
+                    {% endif %}
+            </p>            
+        </div>
+    </div>
+</section>
+                                
+</body>
+</html>
